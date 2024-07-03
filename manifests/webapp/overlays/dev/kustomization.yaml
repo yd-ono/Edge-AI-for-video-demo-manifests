@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+
+namespace: dev
+
+images:
+- digest: sha256:8505b5929182f847718a772c7335aac5a5ad2eb30ef8f982a6abad65fe2d337a
+  name: ___IMAGE_URL___@___IMAGE_DIGEST___
+  newName: registry.gitlab.com/yono1/yolov8-demo

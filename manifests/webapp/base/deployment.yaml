@@ -21,7 +21,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: quay.io/yono/yolov8-demo:1.0
+      - image: ___IMAGE_URL___@___IMAGE_DIGEST___
         imagePullPolicy: IfNotPresent
         name: flask-server
         ports:
