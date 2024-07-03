@@ -9,4 +9,4 @@ namespace: dev
 images:
 - digest: sha256:4b3ba57bae98a8309f057f9aa35bb6ff634def9c6f63e4e2220bb0f73cebdf24
   name: ___IMAGE_URL___@___IMAGE_DIGEST___
-  newName: quay.io/yono1/yolov8-demo
+  newName: quay.io/yono/yolov8-demo
