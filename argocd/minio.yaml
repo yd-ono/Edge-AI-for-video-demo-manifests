@@ -12,8 +12,8 @@ spec:
     directory:
       recurse: true
     path: minio
-    repoURL: https://gitlab.com/yono1/Edge-AI-for-video-demo-manifests.git
-    targetRevision: HEAD
+    repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
+    targetRevision: main
   syncPolicy:
     syncOptions:
     - CreateNamespace=true

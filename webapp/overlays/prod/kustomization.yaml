@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - ../../base
 
-namespace: cps
+namespace: video
 
 images:
 - digest: sha256:8505b5929182f847718a772c7335aac5a5ad2eb30ef8f982a6abad65fe2d337a
