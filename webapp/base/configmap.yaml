@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: webapp-config
 data:
-  OVMS_ENDPOINT: "ovms:9000"
+  OVMS_ENDPOINT: "ovms-pod-9000:9000"
   MODEL_NAME: "demo"
   DEVICE: "/dev/video0"
   PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: "python"
