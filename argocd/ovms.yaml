@@ -11,8 +11,8 @@ spec:
   source:
     directory:
       recurse: true
-    path: apps/app-manifests/webapp
-    repoURL: https://gitlab.com/yono1/microshift-gitops-demo.git
+    path: ovms
+    repoURL: https://gitlab.com/yono1/Edge-AI-for-video-demo-manifests.git
     targetRevision: HEAD
   syncPolicy:
     syncOptions:

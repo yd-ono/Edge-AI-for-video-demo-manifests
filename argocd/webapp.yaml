@@ -9,11 +9,10 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
-    path: apps/app-manifests/webapp
-    repoURL: https://gitlab.com/yono1/microshift-gitops-demo.git
-    targetRevision: HEAD
+    kustomize:
+    path: webapp/overlays/prod
+    repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
+    targetRevision: main
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
