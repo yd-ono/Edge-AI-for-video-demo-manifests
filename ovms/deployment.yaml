@@ -32,6 +32,8 @@ spec:
         - "9000"
         - "--shape"
         - auto
+        # - "--metrics_enable"
+        # - true
         env:
         - name: AWS_REGION
           value: dummy
