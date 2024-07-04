@@ -7,6 +7,6 @@ resources:
 namespace: staging
 
 images:
-- digest: sha256:4b3ba57bae98a8309f057f9aa35bb6ff634def9c6f63e4e2220bb0f73cebdf24
+- digest: sha256:5d45b33cf15db787fd8d1d309b6623972cb490424291ede7652c04b8a25675d6
   name: ___IMAGE_URL___@___IMAGE_DIGEST___
   newName: quay.io/yono/yolov8-demo
