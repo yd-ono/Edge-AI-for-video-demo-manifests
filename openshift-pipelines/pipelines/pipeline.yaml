@@ -10,7 +10,7 @@ spec:
     - name: git-app-url
       type: string
       description: Git Repository Git URL
-      default: https://gitlab.com/yono1/cps-demo
+      default: https://github.com/yd-ono/Edge-AI-for-video-demo
     - name: git-app-revision
       type: string
       description: Git Repository Revision(master,main,etc...)
@@ -18,15 +18,11 @@ spec:
     - name: git-manifests-url
       type: string
       description: Git Repository Git URL for kubernetes manifests
-      default: https://gitlab.com/yono1/cps-demo-manifests
+      default: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests
     - name: git-manifests-revision
       type: string
       description: Git Repository Revision(master,main,etc...)
       default: main
-    - description: Project in OpenShift Container Registry
-      name: container-registry-project
-      type: string
-      default: cps-demo
     - description: Container Registry URL
       name: container-registry-url
       type: string
@@ -34,10 +30,11 @@ spec:
     - description: Container Image name
       name: container-image-name
       type: string
+      default: yolov8-demo
     - description: Container Image version
       name: container-image-version
       type: string
-      default: v1
+      default: '1.0'
 
   tasks:
     - name: git-clone-app
@@ -75,7 +72,7 @@ spec:
         - name: CONTEXT
           value: $(workspaces.source.path)/$(params.target-app-path)
         - name: IMAGE
-          value: $(params.container-registry-url)/$(params.container-registry-project)/$(params.container-image-name):$(params.container-image-version)
+          value: $(params.container-registry-url)/$(params.container-image-name):$(params.container-image-version)
       runAfter:
         - git-clone-app
         - git-clone-manifests
@@ -93,17 +90,17 @@ spec:
             cd ./$(params.container-image-name)/overlays/dev
 
             kustomize edit set image
-            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-registry-project)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
+            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
 
             cd ../stg
 
             kustomize edit set image
-            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-registry-project)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
+            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
 
             cd ../prod
 
             kustomize edit set image
-            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-registry-project)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
+            ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)
       runAfter:
         - build-container
       taskRef:
