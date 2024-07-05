@@ -123,7 +123,7 @@ spec:
             git config --global user.password ${GIT_PASSWORD}
             git checkout $(params.git-manifests-revision)
             git diff
-            git add -A ./$(params.container-image-name)/overlays/
+            git add -A ./$(params.target-app-path)/overlays/
             git commit -a -m '[TEKTON-PIPELINES] Change container image'
             git push
       runAfter:
