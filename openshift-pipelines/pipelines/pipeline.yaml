@@ -115,9 +115,9 @@ spec:
         - name: GIT_SCRIPT
           value: |
             cd $(workspaces.source.path)
-            export GIT_EMAIL=`cat /tekton/creds-secrets/gitlab-token/email`
-            export GIT_USERNAME=`cat /tekton/creds-secrets/gitlab-token/username`
-            export GIT_PASSWORD=`cat /tekton/creds-secrets/gitlab-token/password`
+            export GIT_EMAIL=`cat /tekton/creds-secrets/github-token/email`
+            export GIT_USERNAME=`cat /tekton/creds-secrets/github-token/username`
+            export GIT_PASSWORD=`cat /tekton/creds-secrets/github-token/password`
             git config --global user.email ${GIT_EMAIL}
             git config --global user.name ${GIT_USERNAME}
             git config --global user.password ${GIT_PASSWORD}
