@@ -10,12 +10,12 @@ spec:
         ref: template
       interceptors:
       - ref:
-          name: "gitlab"
+          name: "github"
           kind: ClusterInterceptor
         params:
         - name: "secretRef"
           value:
-            secretName: gitlab-webhook
+            secretName: github-webhook
             secretKey: secretkey
         - name: "eventTypes"
-          value: ["Push Hook"]
+          value: ["push"]

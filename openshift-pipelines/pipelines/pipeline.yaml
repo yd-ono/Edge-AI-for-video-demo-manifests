@@ -87,7 +87,7 @@ spec:
       params:
         - name: KUSTOMIZE_SCRIPT
           value: >
-            cd ./$(params.container-image-name)/overlays/dev
+            cd ./$(params.target-app-path)/overlays/dev
 
             kustomize edit set image
             ___IMAGE_URL___@___IMAGE_DIGEST___=$(params.container-registry-url)/$(params.container-image-name)@$(tasks.build-container.results.IMAGE_DIGEST)

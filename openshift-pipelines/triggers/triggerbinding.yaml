@@ -5,4 +5,4 @@ metadata:
 spec:
   params:
     - name: appname
-      value: $(body.commits[0].title)
+      value: $(body.head_commit.message)
