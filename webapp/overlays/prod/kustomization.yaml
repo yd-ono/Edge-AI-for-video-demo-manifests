@@ -7,6 +7,6 @@ resources:
 namespace: video
 
 images:
-- digest: sha256:a581469881282b0a7bd12253e73b0c6a5f51d77ba1445e87c6b635015615f7c2
+- digest: sha256:ce96d46ca35c5f5911e44fe75814c02664ba3f78391cb0256ab6de1af750c5d0
   name: ___IMAGE_URL___@___IMAGE_DIGEST___
   newName: quay.io/yono/yolov8-demo
