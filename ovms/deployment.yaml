@@ -34,7 +34,7 @@ spec:
         - "9090"
         - "--shape"
         - auto
-        # - "--metrics_enable"
+        - "--metrics_enable"
         env:
         - name: AWS_REGION
           value: dummy
