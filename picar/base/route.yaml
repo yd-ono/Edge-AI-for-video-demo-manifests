@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: picar
+  labels:
+    app: picar
+spec:
+  to:
+    kind: Service
+    name: picar
+    weight: 100
+  port:
+    targetPort: 5000-tcp
+  wildcardPolicy: None

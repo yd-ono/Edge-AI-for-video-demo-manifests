@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app: picar
+  labels:
+    app: picar
+  name: picar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: picar
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        app: picar
+        version: v1.2
+      labels:
+        app: picar
+        version: v1
+    spec:
+      containers:
+      - image: ___IMAGE_URL___@___IMAGE_DIGEST___
+        imagePullPolicy: IfNotPresent
+        name: flask-server
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        envFrom:
+          - configMapRef:
+              name: picar-config
+        securityContext:
+          privileged: true
+      restartPolicy: Always
+      serviceAccount: picar
+      serviceAccountName: picar
