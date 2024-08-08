@@ -22,7 +22,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: quay.io/yono/droneai:1.0
+      - image: quay.io/yono/yolov8-demo:4.0
         imagePullPolicy: IfNotPresent
         name: flask-server
         ports:
