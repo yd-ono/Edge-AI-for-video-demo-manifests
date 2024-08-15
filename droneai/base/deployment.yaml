@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app: droneai
+  labels:
+    app: droneai
+  name: droneai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: droneai
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        app: droneai
+        version: v1.2
+      labels:
+        app: droneai
+        version: v1
+    spec:
+      containers:
+      - image: quay.io/yono/yolov8-demo:1.0
+        imagePullPolicy: IfNotPresent
+        name: flask-server
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+        envFrom:
+          - configMapRef:
+              name: droneai-config
+        securityContext:
+          privileged: true
+      restartPolicy: Always
+      serviceAccount: droneai
+      serviceAccountName: droneai

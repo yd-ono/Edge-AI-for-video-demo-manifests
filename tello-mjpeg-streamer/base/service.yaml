@@ -11,6 +11,7 @@ spec:
       protocol: TCP
       port: 5000
       targetPort: 5000
+      nodePort: 32211
   selector:
     app: tello-mjpeg-streamer
 ---
@@ -43,5 +44,21 @@ spec:
       protocol: UDP
       port: 8889
       targetPort: 8889
+  selector:
+    app: tello-mjpeg-streamer
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tello-mjpeg-streamer-status-receive
+  labels:
+    app: tello-mjpeg-streamer-status-receive
+spec:
+  type: ClusterIP
+  ports:
+    - name: 8890-udp
+      protocol: UDP
+      port: 8890
+      targetPort: 8890
   selector:
     app: tello-mjpeg-streamer

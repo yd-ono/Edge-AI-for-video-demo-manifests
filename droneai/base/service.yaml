@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: droneai
+  labels:
+    app: droneai
+spec:
+  type: NodePort
+  ports:
+    - name: 5000-tcp
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
+  selector:
+    app: droneai
