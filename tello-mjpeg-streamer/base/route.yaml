@@ -1,14 +1,14 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: droneai
+  name: tello-mjpeg-streamer
   labels:
-    app: droneai
+    app: tello-mjpeg-streamer
 spec:
   to:
     kind: Service
-    name: droneai-web
+    name: tello-mjpeg-streamer-web
     weight: 100
   port:
-    targetPort: 5000-tcp
+    targetPort: 5000
   wildcardPolicy: None

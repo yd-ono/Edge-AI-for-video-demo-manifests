@@ -9,4 +9,4 @@ namespace: dev
 images:
 - digest: sha256:d801649d16cf7cb37453d48c6b4891c8a2b6047f0781f24d2273603d7083c54f
   name: ___IMAGE_URL___@___IMAGE_DIGEST___
-  newName: quay.io/yono/droneai
+  newName: quay.io/yono/tello-mjpeg-streamer

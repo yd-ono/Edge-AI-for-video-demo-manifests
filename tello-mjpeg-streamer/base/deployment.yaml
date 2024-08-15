@@ -2,31 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    app: droneai
+    app: tello-mjpeg-streamer
   labels:
-    app: droneai
-  name: droneai
+    app: tello-mjpeg-streamer
+  name: tello-mjpeg-streamer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: droneai
+      app: tello-mjpeg-streamer
   strategy: {}
   template:
     metadata:
       annotations:
-        app: droneai
-        version: v1.2
+        app: tello-mjpeg-streamer
+        version: v1.0
       labels:
-        app: droneai
+        app: tello-mjpeg-streamer
         version: v1
     spec:
-      # initContainers:
-      # - name: drone-init
-      #   image: quay.io/yono/initdrone:1.0
-      #   imagePullPolicy: IfNotPresent
       containers:
-      - image: quay.io/yono/yolov8-demo:1.0
+      - image: quay.io/yono/tello-mjpeg-streamer:1.0
         imagePullPolicy: IfNotPresent
         name: flask-server
         ports:
@@ -34,12 +30,11 @@ spec:
           protocol: TCP
         - containerPort: 11111
           protocol: UDP
-        envFrom:
-          - configMapRef:
-              name: droneai-config
+        - containerPort: 8889
+          protocol: UDP
         securityContext:
           privileged: true
       hostNetwork: true
       restartPolicy: Always
-      serviceAccount: droneai
-      serviceAccountName: droneai
+      serviceAccount: tello-mjpeg-streamer
+      serviceAccountName: tello-mjpeg-streamer

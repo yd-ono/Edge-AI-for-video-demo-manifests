@@ -8,5 +8,5 @@ namespace: video
 
 images:
 - name: ___IMAGE_URL___@___IMAGE_DIGEST___
-  newName: quay.io/yono/droneai
+  newName: quay.io/yono/tello-mjpeg-streamer
   newTag: "1.0"

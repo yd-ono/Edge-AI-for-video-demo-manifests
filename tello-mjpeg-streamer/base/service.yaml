@@ -1,0 +1,47 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: tello-mjpeg-streamer-web
+  labels:
+    app: tello-mjpeg-streamer-web
+spec:
+  type: NodePort
+  ports:
+    - name: 5000-tcp
+      protocol: TCP
+      port: 5000
+      targetPort: 5000
+  selector:
+    app: tello-mjpeg-streamer
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tello-mjpeg-streamer-video
+  labels:
+    app: tello-mjpeg-streamer-video
+spec:
+  type: ClusterIP
+  ports:
+    - name: 11111-udp
+      protocol: UDP
+      port: 11111
+      targetPort: 11111
+  selector:
+    app: tello-mjpeg-streamer
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tello-mjpeg-streamer-udp-receive
+  labels:
+    app: tello-mjpeg-streamer-udp-receive
+spec:
+  type: ClusterIP
+  ports:
+    - name: 8889-udp
+      protocol: UDP
+      port: 8889
+      targetPort: 8889
+  selector:
+    app: tello-mjpeg-streamer
