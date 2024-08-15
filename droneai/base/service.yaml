@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: droneai
+  name: droneai-web
   labels:
-    app: droneai
+    app: droneai-web
 spec:
   type: NodePort
   ports:
@@ -11,6 +11,21 @@ spec:
       protocol: TCP
       port: 5000
       targetPort: 5000
-      nodePort: 32281
+  selector:
+    app: droneai
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: droneai-video-stream
+  labels:
+    app: droneai-video-stream
+spec:
+  type: ClusterIP
+  ports:
+    - name: 11111-udp
+      protocol: UDP
+      port: 11111
+      targetPort: 11111
   selector:
     app: droneai

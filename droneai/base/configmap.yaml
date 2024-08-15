@@ -6,7 +6,7 @@ data:
   OVMS_ENDPOINT: "ovms:9000"
   MODEL_NAME: "demo"
   DEVICE: "udp://@192.168.10.1:11111?overrun_nonfatal=1&fifo_size=50000000"
-  FPS: "0"
+  FPS: "0.1"
   OVMS_CLIENT_TIMEOUT: "0.5"
   PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION: "python"
   PORT: "5000"
