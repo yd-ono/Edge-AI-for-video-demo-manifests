@@ -23,7 +23,7 @@ spec:
     spec:
       hostNetwork: true
       containers:
-      - image: quay.io/yono/tello-mjpeg-streamer:1.0
+      - image: quay.io/yono/tello-mjpeg-streamer:2.0
         imagePullPolicy: IfNotPresent
         name: flask-server
         ports:
@@ -37,6 +37,9 @@ spec:
           protocol: UDP
         securityContext:
           privileged: true
+        envFrom:
+          - configMapRef:
+              name: tello-config
       restartPolicy: Always
       serviceAccount: tello-mjpeg-streamer
       serviceAccountName: tello-mjpeg-streamer

@@ -4,6 +4,7 @@ resources:
   - sa.yaml
   - cr.yaml
   - rb.yaml
+  - configmap.yaml
   - deployment.yaml
   - service.yaml
   - route.yaml

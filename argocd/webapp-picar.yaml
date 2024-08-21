@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: webapp
+  name: webapp-picar
   namespace: openshift-gitops
 spec:
   destination:
@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     kustomize:
-    path: webapp/base
+    path: picar/base
     repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
     targetRevision: main
   syncPolicy:
