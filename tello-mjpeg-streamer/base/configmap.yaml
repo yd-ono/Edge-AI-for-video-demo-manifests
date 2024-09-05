@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: tello-config
 data:
-  OVMS_ENDPOINT: "ovms:9000"
+  OVMS_ENDPOINT: "192.168.3.101:32290"
   MODEL_NAME: "demo"
   FPS: "0"
   OVMS_CLIENT_TIMEOUT: "0.5"
