@@ -16,7 +16,7 @@ spec:
     metadata:
       annotations:
         app: webapp
-        version: v1.2
+        version: v1.1
       labels:
         app: webapp
         version: v1
