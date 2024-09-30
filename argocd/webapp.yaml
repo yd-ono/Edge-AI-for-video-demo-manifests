@@ -15,8 +15,6 @@ spec:
     targetRevision: main
   syncPolicy:
     automated: {}
-    retry:
-      limit: 20
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
