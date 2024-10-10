@@ -9,7 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    kustomize:
     path: ovms
     repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
     targetRevision: main

@@ -9,7 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    kustomize:
     path: tello-mjpeg-streamer/base
     repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
     targetRevision: main
