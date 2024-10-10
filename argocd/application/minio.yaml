@@ -16,7 +16,8 @@ spec:
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
-    - PrunePropagationPolicy=background
+    -  PrunePropagationPolicy=foreground
+    -  PrunePropagationPolicy=background
     automated:
       prune: true
       selfHeal: true
