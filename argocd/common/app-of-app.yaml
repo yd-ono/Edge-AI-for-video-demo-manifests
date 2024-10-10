@@ -1,22 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: webapp-picar
+  name: app-of-app
   namespace: openshift-gitops
 spec:
   destination:
-    namespace: video
+    namespace: openshift-gitops
     server: https://kubernetes.default.svc
   project: default
   source:
-    kustomize:
-    path: picar/base
+    path: argocd/application
     repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
-    targetRevision: main
+    targetRevision: HEAD
   syncPolicy:
-    automated: {}
-    retry:
-      limit: 10
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
+    - PrunePropagationPolicy=foreground
+    - PrunePropagationPolicy=background
+    automated:
+      prune: true
+      selfHeal: true

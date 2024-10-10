@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: webapp-drone
+  name: ovms
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,14 +9,17 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    kustomize:
-    path: tello-mjpeg-streamer/base
+    directory:
+      recurse: true
+    path: ovms
     repoURL: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests.git
     targetRevision: main
   syncPolicy:
-    automated: {}
-    retry:
-      limit: 10
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=true
+    - PrunePropagationPolicy=foreground
+    - PrunePropagationPolicy=background
+    automated:
+      prune: true
+      selfHeal: true
