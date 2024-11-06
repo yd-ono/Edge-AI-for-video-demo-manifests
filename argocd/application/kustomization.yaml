@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - minio.yaml
   - ovms.yaml
-  # - webapp.yaml
+  - webapp.yaml
