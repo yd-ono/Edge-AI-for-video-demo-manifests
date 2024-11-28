@@ -16,6 +16,14 @@
           }
         }
       },
+      "managedclustersetbinding": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "subscription": {
         "type": "object",
         "properties": {

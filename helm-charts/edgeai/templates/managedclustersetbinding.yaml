@@ -2,6 +2,6 @@ apiVersion: cluster.open-cluster-management.io/v1beta2
 kind: ManagedClusterSetBinding
 metadata:
   namespace: openshift-gitops
-  name: default-edge-ai
+  name: {{ .Values.managedclustersetbinding.name }}
 spec:
   clusterSet: default

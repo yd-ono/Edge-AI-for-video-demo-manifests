@@ -3,6 +3,9 @@ application:
   namespace: video
   location: edge
 
+managedclustersetbinding:
+  name: default-edge-ai
+
 subscription:
   name: edgeai-demo-suscription-1
   gitpath: argocd/common/app-of-app.yaml
