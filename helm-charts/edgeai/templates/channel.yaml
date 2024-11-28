@@ -1,0 +1,10 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  annotations:
+    apps.open-cluster-management.io/reconcile-rate: {{ .Values.channel.reconcile_rate }}
+  name: {{ .Values.channel.name }}
+  namespace: {{ .Values.channel.namespace }}
+spec:
+  type: {{ .Values.channel.type }}
+  pathname: {{ .Values.channel.path }}

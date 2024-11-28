@@ -4,3 +4,5 @@ resources:
   - minio.yaml
   - ovms.yaml
   - webapp.yaml
+  # - webapp-drone.yaml
+  # - webapp-picar.yaml

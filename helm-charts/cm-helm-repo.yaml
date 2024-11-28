@@ -1,0 +1,8 @@
+apiVersion: helm.openshift.io/v1beta1
+kind: HelmChartRepository
+metadata:
+  name: demo-apps-helm-charts-edge-ai
+spec:
+  name: Edge AI Demo Helm Charts
+  connectionConfig:
+    url: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests/raw/main/helm-charts/docs

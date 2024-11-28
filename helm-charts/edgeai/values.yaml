@@ -1,0 +1,19 @@
+application:
+  name: edgeai-demo
+  namespace: video
+  location: edge
+
+subscription:
+  name: edgeai-demo-suscription-1
+  gitpath: argocd/common/app-of-app.yaml
+
+placement:
+  name: edgeai-demo-placement-1
+  location: edge
+
+channel:
+  name: edgeai-demo-channel
+  namespace: edgeai-demo-channel
+  type: Git
+  path: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests
+  reconcile_rate: high
