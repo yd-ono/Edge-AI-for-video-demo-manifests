@@ -4,4 +4,4 @@ keywords:
 - demo
 name: edgeai
 version: 1.0.0
-icon: https://github.com/yd-ono/Edge-AI-for-video-demo-manifests/raw/main/helm-charts/images/edgeai.png
+icon: https://raw.githubusercontent.com/yd-ono/Edge-AI-for-video-demo-manifests/main/helm-charts/images/edgeai.png
