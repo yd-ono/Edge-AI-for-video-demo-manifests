@@ -1,15 +1,3 @@
 apiVersion: v1
-entries:
-  edgeai:
-  - apiVersion: v2
-    created: "2024-12-03T11:43:03.151608+09:00"
-    description: Edge AI Demo Project
-    digest: 1584ac9e646783971c7b9dfc77c13c1f4d815b6cbaabc8c3ffe82bfffd91c453
-    icon: https://raw.githubusercontent.com/yd-ono/Edge-AI-for-video-demo-manifests/main/helm-charts/images/edgeai.png
-    keywords:
-    - demo
-    name: edgeai
-    urls:
-    - edgeai-1.0.0.tgz
-    version: 1.0.0
-generated: "2024-12-03T11:43:03.151039+09:00"
+entries: {}
+generated: "2024-12-03T11:45:26.646928+09:00"

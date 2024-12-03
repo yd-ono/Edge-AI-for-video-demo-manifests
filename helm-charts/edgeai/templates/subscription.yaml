@@ -6,7 +6,7 @@ metadata:
     apps.open-cluster-management.io/git-path: {{ .Values.subscription.gitpath}}
     apps.open-cluster-management.io/reconcile-option: merge
   labels:
-    app: demo
+    app: edgeai-demo
   name: {{ .Values.subscription.name }}
   namespace: openshift-gitops
 spec:
