@@ -4,7 +4,7 @@ application:
   location: edge
 
 managedclustersetbinding:
-  name: home
+  name: default
 
 subscription:
   name: edgeai-demo-suscription-1
