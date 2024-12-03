@@ -4,7 +4,7 @@ application:
   location: edge
 
 managedclustersetbinding:
-  name: default-edge-ai
+  name: home
 
 subscription:
   name: edgeai-demo-suscription-1
@@ -12,7 +12,7 @@ subscription:
 
 placement:
   name: edgeai-demo-placement-1
-  location: edge
+  location: home
 
 channel:
   name: edgeai-demo-channel
